@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempLove - Find Your Fun Connection!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">💕 TempLove</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#browse">Browse</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Find Your Fun Connection! 🎉</h1>
+                <p>Temporary, casual, and just for fun - no strings attached!</p>
+                <div class="cta-buttons">
+                    <button class="btn primary" onclick="showSignup()">Join the Fun</button>
+                    <button class="btn secondary" onclick="showBrowse()">Browse Profiles</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="signup" class="signup-section hidden">
+            <div class="form-container">
+                <h2>Create Your Fun Profile</h2>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="age" min="18" max="99" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Looking for</label>
+                        <select id="lookingFor" required>
+                            <option value="">Select...</option>
+                            <option value="boyfriend">Boyfriend</option>
+                            <option value="girlfriend">Girlfriend</option>
+                            <option value="friend">Just Friends</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fun Fact About You</label>
+                        <textarea id="funFact" placeholder="Tell us something interesting!"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Create Profile</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="browse" class="browse-section hidden">
+            <h2>Available Connections 💫</h2>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterProfiles('all')">All</button>
+                <button class="filter-btn" onclick="filterProfiles('boyfriend')">Looking for Boyfriend</button>
+                <button class="filter-btn" onclick="filterProfiles('girlfriend')">Looking for Girlfriend</button>
+                <button class="filter-btn" onclick="filterProfiles('friend')">Just Friends</button>
+            </div>
+            <div id="profilesGrid" class="profiles-grid">
+                <!-- Profiles will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>💕 TempLove - Where fun connections happen! Remember: Be respectful, stay safe, and have fun! 💕</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
